@@ -17,6 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib import admin
+from django.urls import path
+
+from books.views import index, about_handler, books_list, random_book, random_book_with_missing
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
+    path('about/', about_handler),
+    path('books_list/', books_list),
+    path('random_book/', random_book),
+    path('random_book_with_missing/', random_book_with_missing),
 ]
